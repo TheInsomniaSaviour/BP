@@ -1,0 +1,21 @@
+name: LabSA_mikrotik
+
+topology:
+  nodes:
+    R1:
+      kind: mikrotik_ros
+      #image: mikrotik/chr:latest
+      image: docker.io/iparchitechs/chr:stable
+    R2:
+      kind: mikrotik_ros
+      #image: mikrotik/chr:latest
+      image: docker.io/iparchitechs/chr:stable
+    R3:
+      kind: mikrotik_ros
+      image: docker.io/iparchitechs/chr:stable
+      #image: mikrotik/chr:latest 
+
+  links: 
+  - endpoints: ["R1:ether2", "R2:ether2"]
+  - endpoints: ["R2:ether3", "R3:ether3"]
+  - endpoints: ["R1:ether3", "R3:ether2"]
