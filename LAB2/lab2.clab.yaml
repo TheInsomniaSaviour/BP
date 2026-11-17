@@ -1,0 +1,80 @@
+name: LabA_single-area_OSPF
+
+topology:
+  nodes:
+    R1:
+      kind: nokia_srlinux
+      type: ixr-d3
+      image: ghcr.io/nokia/srlinux
+    R2:
+      kind: nokia_srlinux
+      type: ixr-d3
+      image: ghcr.io/nokia/srlinux
+    R3:
+      kind: nokia_srlinux
+      type: ixr-d3
+      image: ghcr.io/nokia/srlinux
+    R4:
+      kind: nokia_srlinux
+      type: ixr-d3
+      image: ghcr.io/nokia/srlinux
+    R5:
+      kind: nokia_srlinux
+      type: ixr-d3
+      image: ghcr.io/nokia/srlinux
+    R6:
+      kind: nokia_srlinux
+      type: ixr-d3
+      image: ghcr.io/nokia/srlinux
+    R7:
+      kind: nokia_srlinux
+      type: ixr-d3
+      image: ghcr.io/nokia/srlinux
+
+
+    HostA: 
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 192.168.0.2/24 dev eth1 
+    HostB:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 192.168.1.2/24 dev eth1 
+
+  links:
+    #propoj R1 na R3
+    - endpoints: [ "R1:ethernet-1/1", "R3:ethernet-1/1" ]
+      ipv4: [ "10.0.0.1/30", "10.0.0.2/30" ]
+    #propoj R1 na R5
+    - endpoints: [ "R1:ethernet-1/2", "R5:ethernet-1/1" ]
+      ipv4: [ "10.0.0.5/30", "10.0.0.6/30" ]
+    #propoj R2 na R3
+    - endpoints: [ "R2:ethernet-1/1", "R3:ethernet-1/2" ]
+      ipv4: [ "10.0.0.9/30", "10.0.0.10/30" ]
+    #propoj R2 na R4
+    - endpoints: [ "R2:ethernet-1/2", "R4:ethernet-1/1" ]
+      ipv4: [ "10.0.0.13/30", "10.0.0.14/30" ]
+    #propoj R3 na R4
+    - endpoints: [ "R3:ethernet-1/3", "R4:ethernet-1/2" ]
+      ipv4: [ "10.0.0.17/30", "10.0.0.18/30" ]
+    #propoj R4 na R5
+    - endpoints: [ "R4:ethernet-1/3", "R5:ethernet-1/2" ]
+      ipv4: [ "10.0.0.21/30", "10.0.0.22/30" ]
+    #propoj R4 na R6
+    - endpoints: [ "R4:ethernet-1/4", "R6:ethernet-1/1" ]
+      ipv4: [ "10.0.0.25/30", "10.0.0.26/30" ]
+    #propoj R3 na R6
+    - endpoints: [ "R3:ethernet-1/4", "R6:ethernet-1/2" ]
+      ipv4: [ "10.0.0.29/30", "10.0.0.30/30" ]
+    #propoj R6 na R7
+    - endpoints: [ "R6:ethernet-1/3", "R7:ethernet-1/1" ]
+      ipv4: [ "10.0.0.33/30", "10.0.0.34/30" ]
+    #propoj HostA na R7 
+    - endpoints: [ "R7:ethernet-1/2", "HostA:eth1" ]
+      ipv4: [ "192.168.0.1/24"]
+    #propoj HostB na R5
+    - endpoints: [ "R5:ethernet-1/3", "HostB:eth1" ]
+      ipv4: [ "192.168.1.1/24"]
+

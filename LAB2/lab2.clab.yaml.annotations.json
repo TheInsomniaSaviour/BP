@@ -1,0 +1,82 @@
+{
+  "freeTextAnnotations": [],
+  "freeShapeAnnotations": [],
+  "trafficRateAnnotations": [],
+  "groupStyleAnnotations": [],
+  "networkNodeAnnotations": [],
+  "nodeAnnotations": [
+    {
+      "id": "R1",
+      "interfacePattern": "e1-{n}",
+      "position": {
+        "x": 460,
+        "y": 120
+      }
+    },
+    {
+      "id": "R2",
+      "interfacePattern": "e1-{n}",
+      "position": {
+        "x": 560,
+        "y": 120
+      }
+    },
+    {
+      "id": "R3",
+      "interfacePattern": "e1-{n}",
+      "position": {
+        "x": 360,
+        "y": 300
+      }
+    },
+    {
+      "id": "R4",
+      "interfacePattern": "e1-{n}",
+      "position": {
+        "x": 520,
+        "y": 300
+      }
+    },
+    {
+      "id": "R5",
+      "interfacePattern": "e1-{n}",
+      "position": {
+        "x": 680,
+        "y": 300
+      }
+    },
+    {
+      "id": "R6",
+      "interfacePattern": "e1-{n}",
+      "position": {
+        "x": 440,
+        "y": 440
+      }
+    },
+    {
+      "id": "R7",
+      "interfacePattern": "e1-{n}",
+      "position": {
+        "x": 460,
+        "y": 560
+      }
+    },
+    {
+      "id": "HostB",
+      "position": {
+        "x": 740,
+        "y": 380
+      }
+    },
+    {
+      "id": "HostA",
+      "position": {
+        "x": 540,
+        "y": 640
+      }
+    }
+  ],
+  "edgeAnnotations": [],
+  "aliasEndpointAnnotations": [],
+  "viewerSettings": {}
+}
