@@ -10,7 +10,6 @@ rpm
 rpm/*
 dist
 private
-clab-*
 .envrc
 
 tmp/
@@ -67,3 +66,6 @@ tests/*.html
 # nix
 result
 result-*
+
+container-lab
+
